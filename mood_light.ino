@@ -137,6 +137,9 @@ void stateSolidRed() {
 //
 //  delay(8) controls speed — smaller = faster, larger = slower.
 //
+// Task: 
+//  1. Remove the slashes in front of this state in the state list and update the count
+//
 // ADVANCED CHALLENGE: Can you make this fade green?
 
 void stateBreathing() {
@@ -168,13 +171,16 @@ void stateBreathing() {
 //    0 = red,  85 = green,  170 = blue,  255 = back to red
 //
 //  delay(20) controls speed — smaller = faster, larger = slower.
+//
+// Task: 
+//  1. Remove the slashes in front of this state in the state list and update the count
 
 void stateColorCycle() {
 
   for (int hue = 0; hue < 256; hue++) {
     int r = (hue < 85)  ? (255 - hue * 3) : (hue < 170 ? 0 : (hue - 170) * 3);
-    int g = (hue < 85)  ? (hue * 3)       : (hue < 170 ? (170 - hue) * 3 : 0);
-    int b = (hue < 85)  ? 0               : (hue < 170 ? (hue - 85) * 3  : 255 - (hue - 170) * 3);
+    int g = (hue < 85)  ? (hue * 3) : (hue < 170 ? (170 - hue) * 3 : 0);
+    int b = (hue < 85)  ? 0  : (hue < 170 ? (hue - 85) * 3  : 255 - (hue - 170) * 3);
     setColor(r, g, b);
     delay(20);
     if (digitalRead(BUTTON_PIN) == LOW) return;
