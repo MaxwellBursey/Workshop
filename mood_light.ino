@@ -185,7 +185,7 @@ void stateColorCycle() {
 //    3. Add 1 to TOTAL_STATES
 // ============================================================
 
-const int TOTAL_STATES = 3;  // ← update this when you add a state!
+const int TOTAL_STATES = 2;  // ← update this when you add a state!
 
 void runCurrentState() {
   switch (currentState) {
