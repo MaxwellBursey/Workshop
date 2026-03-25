@@ -116,8 +116,15 @@ void stateSolidRed() {
 //
 //  Task:
 //  1. Write a function like the one above, but name it yourself. [void stateCustom() { ]
-//  2. Add one line inside the curly brackets: Pick a custom color [setColor(?, ?, ?);]
+//  2. Add one line inside the curly brackets: 
+//         - Pick a custom color [setColor(?, ?, ?);]
+//         - Make it change between 2 colors [delay(500);] [if (digitalRead(BUTTON_PIN) == LOW) return;]
 //  3. Add your state to the state list [Farther Below]
+
+// vvvv ADD CUSTOM STATE HERE vvvv
+
+
+
 
 
 // ── STATE 4 — Breathing ─────────────────────────────────────
@@ -215,7 +222,7 @@ void loop() {
 
   // A "fresh press" means the button is down NOW but was up last loop
   if (buttonState == LOW && lastButtonState == HIGH) {
-    delay(50);  // debounce — wait for the signal to settle
+    delay(50);  // debounce, wait for the signal to settle
     currentState = (currentState + 1) % TOTAL_STATES;  // move to next state
 
     // Wait here until the finger is off the button before continuing
