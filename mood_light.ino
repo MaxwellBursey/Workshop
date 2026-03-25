@@ -84,34 +84,28 @@ void stateOff() {
 //
 //  We want the LED to show solid red and stay there.
 //
-//  TO COMPLETE: Add one line inside the curly brackets:
-//
-//    setColor(255, 0, 0);
-//
 //  255 = full red, 0 = green off, 0 = blue off
 
 void stateSolidRed() {
-
-  // ADD YOUR CODE HERE
-
-}
-
-
-// ── STATE 2 — Solid Green ───────────────────────────────────
-//
-//  We want the LED to show solid green and stay there.
-//
-//  TO COMPLETE: Add one line inside the curly brackets:
-//
-// Task: Use an online color picker to find an generate a shade of purple ()
-//
-//    setColor(?, ?, ?);
-
-void stateSolidPurple() {
-
-  // ADD YOUR CODE HERE
+  setColor(255, 0, 0);
 
 }
+
+
+// ── STATE 2 — Solid Purple ───────────────────────────────────
+//
+//  We want the LED to show solid purple and stay there.
+//
+// Task: 
+//  1. Use an online color picker to find and generate a shade of purple [rgbcolorpicker.com]
+//  2. Remove slashes on the next 3 lines.
+//  3. Fill in setColor(R, G, B);
+//  4. Remove the slashes from the state list and add 1 to the state count. [Located Further Down]
+
+//void stateSolidPurple() {
+//  setColor(?, ?, ?);
+
+//}
 
 
 // ── STATE 3 — Your Colour ───────────────────────────────────
@@ -120,17 +114,10 @@ void stateSolidPurple() {
 //  Pick any colour you like using a colour picker.
 //  Search "RGB colour picker" in your browser.
 //
-//  TO COMPLETE: Add one line inside the curly brackets:
-//
-//    setColor(?, ?, ?);
-//
-//  Replace the three ? with your own numbers (0 to 255).
-
-void stateSolidCustom() {
-
-  // ADD YOUR CODE HERE
-
-}
+//  Task:
+//  1. Write a function like the one above, but name it yourself. [void stateCustom() { ]
+//  2. Add one line inside the curly brackets: Pick a custom color [setColor(?, ?, ?);]
+//  3. Add your state to the state list [Farther Below]
 
 
 // ── STATE 4 — Breathing ─────────────────────────────────────
@@ -142,12 +129,14 @@ void stateSolidCustom() {
 //  then back down to 0 (fade out), pausing briefly each step.
 //
 //  delay(8) controls speed — smaller = faster, larger = slower.
+//
+// ADVANCED CHALLENGE: Can you make this fade green?
 
 void stateBreathing() {
 
   // Fade IN — count brightness from 0 up to 255
   for (int brightness = 0; brightness <= 255; brightness++) {
-    setColor(brightness, 0, brightness / 4);
+    setColor(brightness, 0, brightness / 4); // Purple
     delay(8);
     if (digitalRead(BUTTON_PIN) == LOW) return;
   }
@@ -196,16 +185,16 @@ void stateColorCycle() {
 //    3. Add 1 to TOTAL_STATES
 // ============================================================
 
-const int TOTAL_STATES = 6;  // ← update this when you add a state!
+const int TOTAL_STATES = 3;  // ← update this when you add a state!
 
 void runCurrentState() {
   switch (currentState) {
     case 0: stateOff();         break;
     case 1: stateSolidRed();    break;
-    case 2: stateSolidPurple();  break;
-    case 3: stateSolidCustom(); break;
-    case 4: stateBreathing();   break;
-    case 5: stateColorCycle();  break;
+//    case 2: stateSolidPurple();  break;
+//    case 3: YOURCUSTOMSTATENAME(); break;
+//    case 4: stateBreathing();   break;
+//    case 5: stateColorCycle();  break;
   }
 }
 
